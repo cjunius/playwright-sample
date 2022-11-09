@@ -1,5 +1,4 @@
-// @ts-check
-const { test, expect } = require('@playwright/test');
+import { test, expect } from '@playwright/test';
 
 test('homepage has title and links to intro page', async ({ page }) => {
   await page.goto('https://playwright.dev/');
@@ -15,7 +14,7 @@ test('homepage has title and links to intro page', async ({ page }) => {
 
   // Click the get started link.
   await getStarted.click();
-  
+
   // Expects the URL to contain intro.
   await expect(page).toHaveURL(/.*intro/);
 });
